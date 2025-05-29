@@ -1405,13 +1405,6 @@ where
                 }
             };
 
-            let offset: gson::Value = read_argument(
-                "offset",
-                field,
-                query_field,
-                variables,
-                variable_definitions,
-            )?;
             let offset: Option<u64> = match offset {
                 gson::Value::Absent | gson::Value::Null => None,
                 gson::Value::Number(gson::Number::Integer(n)) if n < 0 => {
